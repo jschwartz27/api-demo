@@ -23,12 +23,9 @@ class EmployeeDB:
         return self.__index
 
     # READ
-    def read(self, id: int) -> Employee:
-        e = next(filter(lambda x: x.id == id, self.__db), None)
-        if e:
-            return e
-        else:
-            raise ValueError(f"employee with id {id} not found!")
+    def read(self, id: int) -> Employee | None:
+        return next(filter(lambda x: x.id == id, self.__db), None)
+        # raise ValueError(f"employee with id {id} not found!")
 
     def get_all(self) -> list[Employee]:
         return self.__db
