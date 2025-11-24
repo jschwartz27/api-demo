@@ -42,14 +42,13 @@ class EmployeeDB:
         raise ValueError(f"employee with id {employee.id} not found!")
 
     # DELETE
-    def delete(self, id: int) -> Employee:
-        for item in self.__db:
-            if item.id == id:
-                index = self.__db.index(item)
+    def delete(self, id: int) -> bool:
+        for i, e in enumerate(self.__db):
+            if e.id == id:
+                del self.__db[i]
+                return True
 
-                return self.__db.pop(index)
-
-        raise ValueError(f"employee with id {id} not found!")
+        return False
 
 
 # For testing

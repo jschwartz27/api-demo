@@ -227,11 +227,9 @@ async def delete_employeelogin():
 
     by calling this endpoint with 'id' a response is expected like
 
-    200 {
-            "id": 4
-            "name": "DiveIn",
-            "age": 99
-        }
+    204 No Content
+    OR
+    200 {"message": "Employee with id: {id}, deleted"}
 
     if the resource for the pathparameter 'id' is not found in the backend a status code 404 is expected with some information on the missing resource
 
