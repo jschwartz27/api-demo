@@ -43,7 +43,7 @@ class EmployeeDB:
 
     # DELETE
     def delete(self, id: int) -> bool:
-        for i, e in enumerate(self.__db):
+        for i, e in enumerate(iterable=self.__db, start=0):
             if e.id == id:
                 del self.__db[i]
                 return True
